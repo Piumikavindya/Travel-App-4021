@@ -7,10 +7,10 @@ import Submit from '../form/Submit'
 
 export default function ForgetPassword() {
   return (
-    <div className="fixed inset-0 bg-primary -z-10 flex justify-center items-center p-1">
+    <div className="fixed inset-0 dark:bg-primary -z-10 flex justify-center items-center p-1">
      
     <Container>
-      <form className='bg-secondary rounded p-8 w-96 sppace-y-'> 
+      <form className='dark:bg-secondary rounded p-8 w-96 sppace-y-'> 
        <Title Children='Please Enter Your Email'> </Title>
        <FormInput label='Eamil' placeholder='abcd@gmail.com' name='email'/>
        
