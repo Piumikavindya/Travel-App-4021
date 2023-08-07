@@ -5,8 +5,8 @@ export default function FormInput({name,placeholder,label, ...rest}) {
     <div className='flex flex-col-reverse '>
             
     <input  id= {name}
-    name = {name}className="bg-transparent rounded border-2 dark:border-dark-subtle  border-light-subtle w-full text-lg outline-none focus:border-white p-1 text-white peer transition " placeholder={placeholder}  {...rest} />
-    <label  className='font-semibold dark:text-dark-subtle text-light-subtle p-2 dark:peer-focus:text-white peer-focus:text-primary transition  self-start' htmlFor={name}>
+    name = {name}className="bg-transparent rounded border-2 dark:border-dark-subtle  border-light-subtle w-full text-lg outline-none dark:focus:border-white  focus:border-black p-1 dark:text-white text-bkack peer transition " placeholder={placeholder}  {...rest} />
+    <label  className='font-semibold dark:text-dark-subtle text-light-subtle  p-2 dark:peer-focus:text-white peer-focus:text-black transition  self-start' htmlFor={name}>
         {label}
     </label>
   </div>
