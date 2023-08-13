@@ -18,7 +18,7 @@ export default function Signin() {
          <FormInput label='Eamil' placeholder='abcd@gmail.com' name='email'/>
          <FormInput label='Password' placeholder='***********' name='Password'/>
          
-         <Submit  value="Sign in"/>
+         <Submit value="Sign in"/>
 
          <div className='flex justify-between'>
           <CustomLink  to ='/auth/forget-password'> Forget Password</CustomLink>
