@@ -39,9 +39,9 @@ const handleSubmit = (e) =>{
       <Container>
         <form onSubmit={handleSubmit} className={commonModalClasses+'w-72'}> 
          <Title Children='Sign up'> Sign up</Title>
-         <FormInput value={name} onChange={handleChange} label='Name' placeholder='piumi kavindya' name='Name'/>
+         <FormInput value={name} onChange={handleChange} label='Name' placeholder='piumi kavindya' name='name'/>
          <FormInput value={email} onChange= {handleChange} label='Eamil' placeholder='abcd@gmail.com' name='email'/>
-         <FormInput value={password} onChange={handleChange}  label='Password' placeholder='***********' name='Password'
+         <FormInput value={password} onChange={handleChange}  label='Password' placeholder='***********' name='password'
          type='password'/>
          
          <Submit  value="Sign up"/>
