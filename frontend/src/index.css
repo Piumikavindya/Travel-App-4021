@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.transparent-background {
+    background-image: url('C:\Users\piumi kavindya\Desktop\Travel-App-4021\frontend\src\assert\images\pexels-lukas-hartmann-879794.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100;
+    height: 100;
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  .transparent-bgForm{
+    opacity:1;
+    position: fixed;
+  }

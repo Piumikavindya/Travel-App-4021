@@ -10,9 +10,9 @@ import { commonModalClasses } from '../../utils/theme'
 
 export default function Signin() {
   return (
-    <div className="fixed inset-0 dark:bg-primary bg-green-200 -z-10 flex justify-center items-center p-1">
+    <div className="fixed inset-0 dark:bg-primary bg-green-200 transparent-background -z-10 flex justify-center items-center p-1">
      
-      <Container>
+      <Container className="relative p-4 transparent-bgForm">
         <form className={commonModalClasses+ ' w-72 '}> 
          <Title Children='Sign in'> Sign in</Title>
          <FormInput label='Eamil' placeholder='abcd@gmail.com' name='email'/>
