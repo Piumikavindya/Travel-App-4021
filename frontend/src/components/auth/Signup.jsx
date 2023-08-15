@@ -7,10 +7,17 @@ import CustomLink from '../CustomLink'
 import { commonModalClasses } from '../../utils/theme'
 
 const validateUserInfo=({name, email, password})=>{
-if(!name.trim()) return {ok:false, error: 'Name is missing!'}
-if(/^[a-z A-Z]+$/.test(name)) return {ok:false, error: 'Invalid name!'}
+const isValidName = /^[a-z A-Z]+$/;
 
-if(email.trim()) return {ok:false, error: 'emial is missing!'}
+if(!name.trim()) return {ok:false, error: 'Name is missing!'}
+
+if(!isValidName.test(name)) return {ok:false, error: 'Invalid name!'}
+
+
+if(!password.trim()) return {ok:false, error: 'password is missing!'}
+if(password.length <8) return {ok:false, error: 'password must be 8 characters long!'}
+
+return {ok: true};
 }
 
 export default function Signup() {
@@ -27,8 +34,11 @@ const handleChange = ({target}) =>{
 };
 const handleSubmit = (e) =>{
   e.preventDefault();
-  console.log(userInfo);
+ const{ok,error}= validateUserInfo(userInfo);
  
+if (!ok) return console.log(error);
+
+console.log(userInfo);
 };
 
   const{name,email,password}= userInfo
