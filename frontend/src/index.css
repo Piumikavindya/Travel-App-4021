@@ -4,7 +4,7 @@
 
 
 .transparent-background {
-    background-image: url('C:\Users\piumi kavindya\Desktop\Travel-App-4021\frontend\src\assert\images\pexels-lukas-hartmann-879794.jpg');
+    background-image: url('../src/assert/images/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
