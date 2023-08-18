@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <div>
+
+      <div>
+        
+      </div>
       home
    <div>
+
    <button className='text-black font-semibold'>
       <Link to='pages/Packages'> Packages </Link>
  </button>

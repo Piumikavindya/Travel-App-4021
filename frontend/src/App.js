@@ -18,6 +18,8 @@ export default function App() {
     <Route path='/auth/signup' element={<Signup/>}/>
     <Route path='/auth/forget-password' element={<ForgetPassword/>}/>
     <Route path='/pages/Packages' element={<Packages/>}/>
+    
+    
  </Routes>
     </> //render the navbar
   )
