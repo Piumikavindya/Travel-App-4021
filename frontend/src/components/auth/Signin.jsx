@@ -8,6 +8,7 @@ import { commonModalClasses } from '../../utils/theme'
 
 
 
+
 export default function Signin() {
   return (
     <div className="fixed inset-0 dark:bg-primary bg-green-200 transparent-background -z-10 flex justify-center items-center p-1">
@@ -18,8 +19,10 @@ export default function Signin() {
          <FormInput label='Eamil' placeholder='abcd@gmail.com' name='email'/>
          <FormInput label='Password' placeholder='***********' name='Password'/>
          
-         <Submit value="Sign in"/>
+       
+          <Submit value="Sign in"/>
 
+          
          <div className='flex justify-between'>
           <CustomLink  to ='/auth/forget-password'> Forget Password</CustomLink>
 
