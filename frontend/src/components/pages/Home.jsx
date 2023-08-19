@@ -10,9 +10,13 @@ export default function Home() {
           <div className='background-image'>
             home
            
-            
             </div>
-            <div className='overlay-image'></div>
+            <div className='overlay-image'>
+
+              
+            </div>
+
+
             <button className='sbutton text-black p-2 font-semibold'>
               <Link to='pages/Packages'>Packages</Link>
             </button>
