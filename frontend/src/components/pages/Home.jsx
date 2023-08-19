@@ -1,27 +1,32 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
+import "../../styles/Home.css";
 
 export default function Home() {
   return (
-    <div>
+    <>
+     <section className='home-section'>
+      
+          <div className='content'>
+            home
+          </div>
 
-      <div>
-        
-      </div>
-      home
-   <div>
+          
+            <button className='sbutton text-black p-2 font-semibold'>
+              <Link to='pages/Packages'>Packages</Link>
+            </button>
 
-   <button className='text-black font-semibold'>
-      <Link to='pages/Packages'> Packages </Link>
- </button>
-   </div>
-      
-      
+            <button className='sbutton text-black p-2 font-semibold'>
+              <Link to='pages/Locations'>Locations</Link>
+            </button>
+    
         
+    </section>
+      
+      
+    </>   
       
       
       
-    </div>
   )
 }

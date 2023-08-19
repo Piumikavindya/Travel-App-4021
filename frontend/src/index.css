@@ -4,7 +4,7 @@
 
 
 .transparent-background {
-    background-image: url('../src/assert/images/back.jpg');
+    background-image: url('../src/assets/images/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
