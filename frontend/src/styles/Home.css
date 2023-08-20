@@ -13,7 +13,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 3;
+    opacity: 0.9;
+    filter: blur(3px); 
     background-color: rgba(24, 6, 6, 0.5); 
     z-index: 1; /* Bring the background image to the front */
   }
@@ -26,7 +27,7 @@
     /* Adjust the left position as needed */
     width: 60%; /* Use relative unit for width (40% of the container width) */
     height: 30%; 
-    background-image: url('../assets/images/back_img1.jpg'); /* Set the path to your overlay image */
+    background-image: url('../assets/images/back.jpg'); /* Set the path to your overlay image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

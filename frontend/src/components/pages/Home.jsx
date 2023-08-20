@@ -7,13 +7,13 @@ export default function Home() {
     <>
      <section className='home-section' >
       
-          <div className='background-image'>
+          <div className='background-image '>
             home
            
             </div>
             <div className='overlay-image'>
 
-              
+
             </div>
 
 
