@@ -34,6 +34,8 @@
     background-color: rgba(92, 91, 91, 0.5); 
     opacity: 0.9; /* Set the transparency level for the overlay image */
     z-index: 2; /* Bring the overlay image above the background image */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with shade */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
 
 
