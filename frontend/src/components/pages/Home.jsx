@@ -16,7 +16,11 @@ export default function Home() {
 
             </div>
 
-
+          <div>
+          <button className='sbutton button-container text-black p-2 font-semibold'>
+              <Link to='pages/CreateJourney'>+ Add Journey</Link>
+            </button>
+          </div>
             <button className='sbutton text-black p-2 font-semibold'>
               <Link to='pages/Packages'>Packages</Link>
             </button>
