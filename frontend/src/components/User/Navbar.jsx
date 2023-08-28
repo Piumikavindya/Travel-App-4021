@@ -12,7 +12,7 @@ const {toggleTheme}= useTheme();
       <Container className=" text-white p-2"  >
         <div className=" flex justify-between items-center">
           <Link to='/'>
-           <img src="/logo 1.png"  alt="" className="h-6"/>
+           <img src="/logo2.png"  alt="" className="h-10 "/>
           </Link>
        
        <ul className="flex items-center space-x-6">

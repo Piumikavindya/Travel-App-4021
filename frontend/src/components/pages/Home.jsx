@@ -6,7 +6,8 @@ export default function Home() {
   return (
     <>
      <section className='home-section' >
-      
+     
+
           <div className='background-image '>
             home
            
@@ -30,6 +31,7 @@ export default function Home() {
             </button>
 
           
+      
         
     </section>
       
