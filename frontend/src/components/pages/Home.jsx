@@ -1,21 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../styles/Home.css";
+import Hbar from '../User/Hbar';
 
 export default function Home() {
   return (
     <>
      <section className='home-section' >
      
-
-          <div className='background-image '>
-            home
-           
-            </div>
-            <div className='overlay-image'>
-
-
-            </div>
+      <Hbar>
+        
+      </Hbar>
+       
 
           <div>
           <button className='sbutton button-container text-black p-2 font-semibold'>
