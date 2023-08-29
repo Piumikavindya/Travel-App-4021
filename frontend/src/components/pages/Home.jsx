@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import "../../styles/Home.css";
 import Hbar from '../User/Hbar';
+import Button from '../User/Button';
 
 export default function Home() {
   return (
@@ -12,20 +13,26 @@ export default function Home() {
         
       </Hbar>
        
+       <div>
 
+       <Button to='pages/CreateJourney p-2' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
+       <h1 className='-p-4'>Add Journey Aection</h1>
+       </div>
+
+         
           <div>
-          <button className='sbutton button-container text-black p-2 font-semibold'>
-              <Link to='pages/CreateJourney'>+ Add Journey</Link>
-            </button>
+            
+          <Button to='pages/Packages' style={{ margin: '20px 100px 00px 0px'}}>Packages</Button>
+          Packages section
           </div>
-            <button className='sbutton text-black p-2 font-semibold'>
-              <Link to='pages/Packages'>Packages</Link>
-            </button>
+      
 
-            <button className='sbutton text-black p-2 font-semibold'>
-              <Link to='pages/Locations'>Locations</Link>
-            </button>
-
+      <div>
+      <Button to='pages/Locations'>Locations</Button>
+      Location section
+      </div>
+        
+        
           
       
         

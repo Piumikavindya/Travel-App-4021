@@ -26,7 +26,7 @@
     bottom: 5%;
     /* Adjust the left position as needed */
     width: 60%; /* Use relative unit for width (40% of the container width) */
-    height: 58%; 
+    height: 63%; 
     background-image: url('../assets/images/forest\ 3.jpg'); /* Set the path to your overlay image */
     background-size: cover;
     background-repeat: no-repeat;
@@ -60,7 +60,7 @@
 .Hbar-text{
   font-size: 50px;
   color: white;
-  margin: 30px 00px 30px 0px;
+  margin: 10px 0px 30px 0px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 
 }

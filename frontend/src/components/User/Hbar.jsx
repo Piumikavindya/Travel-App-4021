@@ -8,7 +8,7 @@ export default function Hbar() {
             home
            
             </div>
-            <div className='overlay-image p-2 h-30'>            
+            <div className='overlay-image p-1 h-30'>            
 
             <img src="/logo2.png"  alt="" className="h-20 mx-auto "></img>
                 <h1 className=' Hbar-text text-center'>
