@@ -15,7 +15,7 @@ export default function Home() {
        
        <div>
 
-       <Button to='pages/CreateJourney p-2' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
+       <Button to='pages/CreateJourney' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
        <h1 className='-p-4'>Add Journey Aection</h1>
        </div>
 
