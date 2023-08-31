@@ -1,11 +1,12 @@
 import React from 'react'
+import Pagebar from '../User/Pagebar'
 
 export default function CreateJourney() {
   return (
     <div>
       CreateJourney
      
-      <img src="frontend\src\assets\images\Adventure.jpg " alt="beach" ></img>
+     <Pagebar></Pagebar>
      
     </div>
 
