@@ -39,29 +39,11 @@
   filter: blur(0.5px); 
   }
 
-  .button-container {
-   
-    position: static;
-   margin: 80px 80px 80px 80px;
-    transform: translate(-50%, -50%);
-   
-    flex-direction: column;
-    
-  }
-
-.sbutton{
   
-    width: 50;
-    background-color: #ACFADF;
-    border-radius: 15px;
-   
-}
-
-.Hbar-text{
-  font-size: 50px;
-  color: white;
-  margin: 10px 0px 30px 0px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-
-}
-
+  .Hbar-text{
+    font-size: 50px;
+    color: white;
+    margin: 10px 0px 30px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  
+  }

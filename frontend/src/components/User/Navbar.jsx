@@ -25,11 +25,20 @@ const {toggleTheme}= useTheme();
         <li>
           <input type="text" className="border-2 border-dark-subtle p-1 rounded bg-transparent text-xl outline-none focus:border-white transition text-white" placeholder="search..." />
         </li>
+
+        <li>
+ <Link className="text-white font-semibold text-lg" to='/'>
+Home
+ </Link>
+</li>
+
 <li>
  <Link className="text-white font-semibold text-lg" to='auth/signin'>
  Login
  </Link>
 </li>
+
+
        </ul>
         </div>
        

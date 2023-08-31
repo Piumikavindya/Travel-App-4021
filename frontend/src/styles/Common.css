@@ -1,0 +1,43 @@
+.button-container {
+   
+    position: static;
+   margin: 80px 80px 80px 80px;
+    transform: translate(-50%, -50%);
+   
+    flex-direction: column;
+    
+  }
+
+.sbutton{
+  
+    width: 50;
+    background-color: #ACFADF;
+    border-radius: 15px;
+   
+}
+
+.vertical_bar{
+width: 200px;
+height: 100%;
+background-color: rgb(180, 127, 230);
+}
+  
+.side-image {
+    position: absolute;
+    top: 8.5cqb; /* Adjust the top position as needed */
+    left: 0%;
+    bottom: 5%;
+    /* Adjust the left position as needed */
+    width: 30%; /* Use relative unit for width (40% of the container width) */
+    height: 43%; 
+    background-image: url('../assets/images/beach.jpg'); /* Set the path to your overlay image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: rgba(92, 91, 91, 0.5); 
+    opacity: 0.9; /* Set the transparency level for the overlay image */
+    z-index: 2; /* Bring the overlay image above the background image */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with shade */
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3); 
+  filter: blur(0.5px); 
+  }
