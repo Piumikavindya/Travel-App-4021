@@ -16,28 +16,28 @@
    
 }
 
-.vertical_bar{
-width: 200px;
-height: 100%;
-background-color: rgb(180, 127, 230);
-}
+/* Pagebar styles*/
+.vertical_bar {
+    position: relative;
+    width: calc(33.33% - 20px); /* One third of the screen width with some spacing */
+    height: 100vh; 
+    background-color: rgb(144, 253, 177);
+  }
   
-.side-image {
+  .side-image {
     position: absolute;
-    top: 8.5cqb; /* Adjust the top position as needed */
-    left: 0%;
+    top: 10%; /* Adjust top position as needed */
+    left: 10%;
     bottom: 5%;
-    /* Adjust the left position as needed */
-    width: 30%; /* Use relative unit for width (40% of the container width) */
-    height: 43%; 
-    background-image: url('../assets/images/beach.jpg'); /* Set the path to your overlay image */
+    width: 70%;
+    height: 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left;
-    background-color: rgba(92, 91, 91, 0.5); 
-    opacity: 0.9; /* Set the transparency level for the overlay image */
-    z-index: 2; /* Bring the overlay image above the background image */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with shade */
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3); 
-  filter: blur(0.5px); 
+    background-position: center;
+    background-color: rgba(92, 91, 91, 0.5);
+    opacity: 0.9;
+    z-index: 2;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    filter: blur(0.5px);
   }

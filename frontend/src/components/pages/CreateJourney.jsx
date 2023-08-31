@@ -1,12 +1,16 @@
 import React from 'react'
 import Pagebar from '../User/Pagebar'
+import beach from '../../assets/images/beach.jpg';
 
 export default function CreateJourney() {
   return (
     <div>
-      CreateJourney
      
-     <Pagebar></Pagebar>
+     
+      <Pagebar backgroundImage={beach}>
+      <h1 className='text-black'>Create Your Journey Here</h1>
+
+      </Pagebar>
      
     </div>
 
