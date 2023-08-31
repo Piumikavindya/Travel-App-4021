@@ -19,9 +19,12 @@
 /* Pagebar styles*/
 .vertical_bar {
     position: relative;
-    width: calc(33.33% - 20px); /* One third of the screen width with some spacing */
-    height: 100vh; 
-    background-color: rgb(144, 253, 177);
+    width: 100%; /* Take up full width on smaller screens */
+    max-width: 30%; /* One third of the screen width */
+    height: 100vh;
+    background-color: rgb(180, 127, 230);
+    display: flex;
+    flex-direction: column;
   }
   
   .side-image {
@@ -40,4 +43,17 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
     filter: blur(0.5px);
+  }
+
+  .vertical-bar-text {
+    flex: 1; /* Take up remaining vertical space */
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .vertical_bar {
+      max-width: 100%; /* Take up full width on smaller screens */
+    }
   }

@@ -9,6 +9,10 @@ export default function Pagebar({ backgroundImage, children }) {
       <div className='side-image' style={{ backgroundImage: `url(${backgroundImage})` }}>
       {children}
       </div>
+
+      <div className='vertical-bar-text'>
+        {children} 
+      </div>
     </div>
   )
 }

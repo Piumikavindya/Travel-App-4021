@@ -11,7 +11,9 @@ export default function CreateJourney() {
       <h1 className='text-black'>Create Your Journey Here</h1>
 
       </Pagebar>
-     
+      <div className='vertical-bar-text'>
+        <p>Additional information about the journey goes here.</p>
+      </div>
     </div>
 
     
