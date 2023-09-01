@@ -3,16 +3,20 @@ import Pagebar from '../User/Pagebar'
 import beach from '../../assets/images/beach.jpg';
 
 export default function CreateJourney() {
+
+  const barColor = 'rgb(123, 241, 186);';
   return (
+
+    
     <div>
      
-     
-      <Pagebar backgroundImage={beach}>
+    
+      <Pagebar backgroundImage={beach} backgroundColor={barColor} >
       <h1 className='text-black'>Create Your Journey Here</h1>
 
       </Pagebar>
       <div className='vertical-bar-text'>
-        <p>Additional information about the journey goes here.</p>
+       <h1>this is create </h1>
       </div>
     </div>
 
