@@ -3,7 +3,7 @@ import "../../styles/Home.css";
 import "../../styles/Common.css";
 
 
-export default function Pagebar({ backgroundImage, backgroundColor, children,outsideText }) {
+export default function Pagebar({ backgroundImage, backgroundColor, children }) {
     const sideImageStyle = {
       backgroundImage: `url(${backgroundImage})`,
     };
@@ -18,9 +18,7 @@ export default function Pagebar({ backgroundImage, backgroundColor, children,out
         <div className='side-image vertical-bar-text' style={sideImageStyle}>
           {children}
         </div>
-        <div className='vertical-bar-outside-text'>
-        {outsideText}
-      </div>
+       
       </div>
   )
 }
