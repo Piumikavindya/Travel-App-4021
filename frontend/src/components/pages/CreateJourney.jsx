@@ -4,7 +4,7 @@ import beach from '../../assets/images/beach.jpg';
 
 export default function CreateJourney() {
 
-  const barColor = '#BEADFA'
+  const barColor = 'red'
   
   
   return (
