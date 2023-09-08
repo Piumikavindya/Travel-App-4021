@@ -32,6 +32,10 @@ export default function Home() {
       Location section
       </div>
         
+      <div>
+      <Button to='pages/Events'>Events</Button>
+      Event section
+      </div>
         
           
       
