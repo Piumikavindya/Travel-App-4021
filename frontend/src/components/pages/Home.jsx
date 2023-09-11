@@ -37,7 +37,10 @@ export default function Home() {
       Event section
       </div>
         
-          
+      <div>
+      <Button to='pages/Register'>Register</Button>
+     
+      </div>
       
         
     </section>
