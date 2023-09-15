@@ -16,25 +16,25 @@ export default function Home() {
        <div>
 
        <Button to='pages/CreateJourney' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
-       <h1 className='-p-4'>Add Journey Aection</h1>
+       <h1 className='-p-4'>Add Journey Section</h1>
        </div>
 
          
           <div>
             
           <Button to='pages/Packages' style={{ margin: '20px 100px 00px 0px'}}>Packages</Button>
-          Packages section
+          Packages Section
           </div>
       
 
       <div>
       <Button to='pages/Locations'>Locations</Button>
-      Location section
+      Location Section
       </div>
         
       <div>
       <Button to='pages/Events'>Events</Button>
-      Event section
+      Event Section
       </div>
         
       <div>
