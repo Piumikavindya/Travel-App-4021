@@ -13,12 +13,23 @@ export default function Pagebar({ backgroundImage, backgroundColor, children }) 
     };
   
     return (
-      <div className='vertical_bar' style={verticalBarStyle}>
-        <img src='/logo2.png' alt='logo' className='logo' />
-        <div className='side-image vertical-bar-text' style={sideImageStyle}>
+      <nav className='vertical_bar w-80 min-h-screen border-gray-300' style={verticalBarStyle}>
+        <ul p-5>
+          <li>'
+          <img src='/logo2.png' alt='logo' className='logo' />
+          </li>
+          <li>
+          <div className='side-image vertical-bar-text' style={sideImageStyle}>
           {children}
         </div>
+          </li>
+        
+        </ul>
+     
+        
        
-      </div>
+      </nav>
+      
+      
   )
 }

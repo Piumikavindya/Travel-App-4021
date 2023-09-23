@@ -79,3 +79,12 @@
     font-size: 35px;
   }
  
+  .barColor{
+    background-color: #FFC7EA;
+  }
+
+  .jbutton{
+    border: none;
+    background-color: #FFC7EA;
+    
+  }
