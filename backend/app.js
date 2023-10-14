@@ -24,6 +24,10 @@ connection.once("open", ()=>{
     console.log("MongoDB is Connected!");
 } )
 
+const journeyRouter = require("./Routes/Journeys.js");
+
+app.use("/journey", journeyRouter);
+
 app.listen(PORT, ()=>{
     console.log(`The server is listening on port: ${PORT}`)
 })

@@ -6,6 +6,7 @@ import {LuPackagePlus} from 'react-icons/lu';
 import {BiWorld} from 'react-icons/bi';
 import {SiHotelsdotcom} from 'react-icons/si';
 import {PiParkFill} from 'react-icons/pi';
+import JourneyForm from '../form/JourneyForm';
 
 //import Packages from  '../pages/Packages';
 //import Pagebar from '../User/Pagebar'
@@ -60,8 +61,11 @@ export default function CreateJourney() {
      
       </nav>
       
-       
+      <nav className='vertical_bar1  min-h-screen '>
+ 
+       <JourneyForm></JourneyForm>
      
+      </nav>
     </div>
 
     
