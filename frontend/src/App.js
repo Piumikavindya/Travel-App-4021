@@ -25,7 +25,7 @@ export default function App() {
     <Route path='/auth/forget-password' element={<ForgetPassword/>}/>
     <Route path='/pages/Packages' element={<Packages/>}/>
     <Route path='/pages/Locations' element={<Locations/>}/>
-    <Route path='/add' element={<CreateJourney/>}/>
+    <Route path='/pages/CreateJourney' element={<CreateJourney/>}/>
     <Route path='/pages/Events' element={<Events/>}/>
     <Route path='/pages/Register' element={<Register/>}/>
     <Route path='/pages/Resorts' element={<Resorts/>}/>

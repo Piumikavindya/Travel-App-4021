@@ -21,7 +21,7 @@
     position: relative;
     width: 100%; /* Take up full width on smaller screens */
     max-width: 30%; /* One third of the screen width */
-    height: 100vh;
+    height:100vh;
     margin-bottom: 0%;
     background-color: rgb(123, 241, 186);
     display: flex;
@@ -98,4 +98,30 @@
     border: none;
     background-color: #FFC7EA;
     
+  }
+  /* Journey Form*/
+
+  .custom-label {
+    width: 400px; /* Adjust the width as needed */
+    border: none;
+    font-size: 16px;
+ 
+  }
+  
+  .custom-input {
+    width: 100%; /* Adjust the width as needed */
+    padding: 10px;
+    font-size: 16px;
+    height: 33px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-select {
+    width: 400px; /* Adjust the width as needed */
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    margin-top: 5px;
   }

@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios';
+import React from 'react'
+
 import "../../styles/Home.css";
 import Hbar from '../User/Hbar';
 import Button from '../User/Button';
@@ -15,7 +15,7 @@ export default function Home() {
        
        <div>
 
-       <Button to='/add' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
+       <Button to='/pages/CreateJourney' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
        <h1 className='-p-4'>Add Journey Section</h1>
        </div>
 

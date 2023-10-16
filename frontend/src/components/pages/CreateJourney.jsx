@@ -24,7 +24,7 @@ export default function CreateJourney() {
     <div>
     
     
-    <nav className='vertical_bar w-80 min-h-screen border-gray-300 barColor'>
+    <nav className='vertical_bar w-80 max-h-screen border-gray-300 barColor'>
         <ul p-5>
           <li>'
           <img src='/logo2.png' alt='logo' className='p-2 w-15   h-20 ' style={{margin: '10px 25px 0px 50px'} }  />
@@ -36,7 +36,7 @@ export default function CreateJourney() {
 
          
          <li>
-         <Link className="text-black  flex items-center space-x-1 p-2 hover:opacity-80 font-semibold text-lg" to='/pages/Packages'><LuPackagePlus/>
+         <Link className="text-black  flex items-center space-x-1 p-2 hover:opacity-80 font-semibold text-lg"  to='/pages/Packages'><LuPackagePlus/>
       <span>Packages</span>
         </Link>
          </li>

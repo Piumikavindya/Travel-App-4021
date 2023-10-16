@@ -1,22 +1,38 @@
 const router = require("express").Router();
-const Journey = require("../Models/Journey");
+let Journey = require("../Models/Journey");
 
 // add journey route
 router.route("/add").post((req,res)=>{
 
     const journeyName =req.body.journeyName;
-    const  NoOfDates = Number(req.body.
-    NoOfDates);
-    const  NoOfMembwers = Number(req.body. NoOfMembwers);
+    const NoOfDates = isNaN(req.body.NoOfDates) ? 0 : Number(req.body.NoOfDates);
+    const NoOfMembwers = isNaN(req.body.NoOfMembwers) ? 0 : Number(req.body.NoOfMembwers);
+    const  StartingDate = Date(req.body. StartingDate);
+    const  ContactNO = Number(req.body. ContactNO);
+    const Locations = req.body.Locations; 
+    const  Events = req.body. Events;
+    const  Resorts = req.body. Resorts;
+    const Packages = req.body.Packages;
+
+    if (isNaN(NoOfDates) || isNaN(NoOfMembwers)) {
+        res.status(400).json("Invalid number values for NoOfDates or NoOfMembwers");
+        return; // Exit early to avoid saving invalid data
+    }
 
     const newJourney = new Journey({
         journeyName,
         NoOfDates,
-        NoOfMembwers
+        NoOfMembwers,
+        StartingDate,
+        ContactNO,
+        Locations,
+        Events,
+        Resorts,
+        Packages
     })
     newJourney.save().then(()=>{
         res.json("Journey Added")
-    }).catch(()=>{
+    }).catch((err)=>{
         console.log(err);
     })
 })
@@ -25,7 +41,7 @@ router.route("/add").post((req,res)=>{
 
 router.route("/").get((req,res)=>{
 
-    Journey.find().then((Journey)=>{
+    Journey.find().then((Journeys)=>{
         res.json(Journeys)
     }).catch((err)=>{
         console.log(err);
@@ -36,15 +52,21 @@ router.route("/").get((req,res)=>{
  router.route("/update/:id").put(async(req,res)=>{
     let journeyId = req.params.id;
     // destructure method
-    const {journeyName, NoOfDates,NoOfMembwers} = req.body;
+    const {journeyName, NoOfDates,NoOfMembwers,StartingDate,Locations,ContactNO,Events,Resorts,Packages} = req.body;
 
     const updateJourney ={
         journeyName,
         NoOfDates,
-        NoOfMembwers
+        NoOfMembwers,
+        StartingDate,
+        ContactNO,
+        Locations,
+        Events,
+        Resorts,
+        Packages
     }
     const update = await Journey.findByIdAndUpdate(journeyId).then(()=> {
-        res.status(200).send({status: "User updated"}).catch((err)=>{
+        res.status(200).send({status: "Journey updated"}).catch((err)=>{
             res.status(500).send({status: "Error with updating journey"})
         })
     })

@@ -4,15 +4,39 @@ const Schema = mongoose.Schema;
 const journeySchema = new Schema({
     journeyName : {
         type: String,
-        required: true
+        required: false
     },
     NoOfDates : {
         type: Number,
-        required: true
+        required: false
     },
     NoOfMembwers : {
         type: Number,
-        required: true
+        required: false
+    },
+    StartingDate : {
+        type: Date,
+        required: false
+    },
+    ContactNO : {
+        type: String,
+        required: false
+    },
+    Locations : {
+        type: [String],
+        required: false
+    },
+    Events : {
+        type: [String],
+        required: false
+    },
+    Resorts : {
+        type: [String],
+        required: false
+    },
+    Packages : {
+        type: [String],
+        required: false
     }
 })
 
