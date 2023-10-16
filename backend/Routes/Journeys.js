@@ -6,23 +6,23 @@ router.route("/add").post((req,res)=>{
 
     const journeyName =req.body.journeyName;
     const NoOfDates = isNaN(req.body.NoOfDates) ? 0 : Number(req.body.NoOfDates);
-    const NoOfMembwers = isNaN(req.body.NoOfMembwers) ? 0 : Number(req.body.NoOfMembwers);
-    const  StartingDate = Date(req.body. StartingDate);
+    const NoOfMembers = isNaN(req.body.NoOfMembers) ? 0 : Number(req.body.NoOfMembers);
+    const  StartingDate = new Date(req.body. StartingDate);
     const  ContactNO = Number(req.body. ContactNO);
     const Locations = req.body.Locations; 
     const  Events = req.body. Events;
     const  Resorts = req.body. Resorts;
     const Packages = req.body.Packages;
 
-    if (isNaN(NoOfDates) || isNaN(NoOfMembwers)) {
-        res.status(400).json("Invalid number values for NoOfDates or NoOfMembwers");
+    if (isNaN(NoOfDates) || isNaN(NoOfMembers)) {
+        res.status(400).json("Invalid number values for NoOfDates or NoOfMembers");
         return; // Exit early to avoid saving invalid data
     }
 
     const newJourney = new Journey({
         journeyName,
         NoOfDates,
-        NoOfMembwers,
+        NoOfMembers,
         StartingDate,
         ContactNO,
         Locations,
@@ -52,12 +52,12 @@ router.route("/").get((req,res)=>{
  router.route("/update/:id").put(async(req,res)=>{
     let journeyId = req.params.id;
     // destructure method
-    const {journeyName, NoOfDates,NoOfMembwers,StartingDate,Locations,ContactNO,Events,Resorts,Packages} = req.body;
+    const {journeyName, NoOfDates,NoOfMembers,StartingDate,Locations,ContactNO,Events,Resorts,Packages} = req.body;
 
     const updateJourney ={
         journeyName,
         NoOfDates,
-        NoOfMembwers,
+        NoOfMembers,
         StartingDate,
         ContactNO,
         Locations,

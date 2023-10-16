@@ -33,7 +33,16 @@ export default function JourneyForm() {
             Packages: packageValues
         }
         axios.post("http://localhost:8000/journey/add",newJourney).then(()=>{
-            alert("Journey Added")
+            alert("Journey Added");
+            setJourneyName('');
+            setNoOfDates('');
+            setNoOfMembers('');
+            setStartingDate('');
+            setContactNO('');
+            setLocations([]);
+            setEvents([]);
+            setResorts([]);
+            setPackages([]);
           }).catch((err)=>{
             alert(err)
           })

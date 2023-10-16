@@ -10,7 +10,7 @@ const journeySchema = new Schema({
         type: Number,
         required: false
     },
-    NoOfMembwers : {
+    NoOfMembers : {
         type: Number,
         required: false
     },

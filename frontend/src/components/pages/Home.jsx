@@ -3,6 +3,7 @@ import React from 'react'
 import "../../styles/Home.css";
 import Hbar from '../User/Hbar';
 import Button from '../User/Button';
+import AllJourneys from '../form/AllJourneys';
 
 export default function Home() {
   return (
@@ -13,38 +14,38 @@ export default function Home() {
         
       </Hbar>
        
-       <div>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+  <div>
+    <Button to='/pages/CreateJourney'>+ Add Journey</Button>
 
-       <Button to='/pages/CreateJourney' style={{ margin: '0px 00px 00px 0px' }}>+ Add Journey</Button>
-       <h1 className='-p-4'>Add Journey Section</h1>
-       </div>
+  </div>
 
-         
-          <div>
-            
-          <Button to='pages/Packages' style={{ margin: '20px 100px 00px 0px'}}>Packages</Button>
-          Packages Section
-          </div>
+  <div>
+    <Button to='pages/Packages' style={{ margin: '0px 20px' }}>Packages</Button>
+   
+  </div>
+
+  <div>
+    <Button to='pages/Locations' style={{ margin: '0px 20px' }}>Locations</Button>
+    
+  </div>
+
+  <div>
+    <Button to='pages/Events' style={{ margin: '0px 20px' }}>Events</Button>
+   
+  </div>
+
+  <div>
+    <Button to='pages/Register' style={{ margin: '0px 20px' }}>Register</Button>
+  </div>
+</div>
+
       
-
-      <div>
-      <Button to='pages/Locations'>Locations</Button>
-      Location Section
-      </div>
-        
-      <div>
-      <Button to='pages/Events'>Events</Button>
-      Event Section
-      </div>
-        
-      <div>
-      <Button to='pages/Register'>Register</Button>
-     
-      </div>
-      
-        
+       
     </section>
-      
+        <AllJourneys>
+          
+        </AllJourneys>
       
     </>   
       
