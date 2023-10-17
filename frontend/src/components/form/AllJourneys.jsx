@@ -53,10 +53,10 @@ export default function AllJourneys() {
                         <Link to={`/preview/${journey._id}`}><MdPreview className="text-2xl text-green-600"/>
 
                         </Link>
-                        <Link to={"/journey/update/${journey._id}"}><AiOutlineEdit className="text-2xl text-blue-800"/>
+                        <Link to={`/update/${journey._id}`}><AiOutlineEdit className="text-2xl text-blue-800"/>
 
                         </Link>
-                        <Link to={"/journey/delete/${journey._id}"}><MdDeleteOutline className="text-2xl text-red-800"/>
+                        <Link to={`/delete/${journey._id}`}><MdDeleteOutline className="text-2xl text-red-800"/>
 
                         </Link>
                     </div>

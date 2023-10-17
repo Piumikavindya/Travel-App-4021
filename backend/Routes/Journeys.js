@@ -44,6 +44,7 @@ router.route("/").get((req,res)=>{
 
     Journey.find().then((Journeys)=>{
         res.json(Journeys)
+      
     }).catch((err)=>{
         console.log(err);
     })
@@ -95,7 +96,7 @@ router.route("/").get((req,res)=>{
             // If the journey is not found, send a 404 response
             return res.status(404).json({ status: "Journey not found" });
         }
-        journey.StartingDate = format(new Date(journey.StartingDate), "yyyy-MM-dd");
+        // Journey.StartingDate = format(new Date(Journey.StartingDate), "yyyy-MM-dd");
 
         res.status(200).json(journey); // Send the journey data in the response
     } catch (err) {

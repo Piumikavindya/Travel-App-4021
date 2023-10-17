@@ -30,10 +30,8 @@ export default function App() {
     <Route path='/pages/Events' element={<Events/>}/>
     <Route path='/pages/Register' element={<Register/>}/>
     <Route path='/pages/Resorts' element={<Resorts/>}/>
-    <Route path='/update/:id' element={<UpdateJourney/>}
-    />
-    <Route path='/preview/:id' element={<PreviewJourney/>}
-    />
+    <Route path='/update/:id' element={<UpdateJourney/>}/>
+    <Route path='/preview/:id' element={<PreviewJourney/>}/>
     
  </Routes>
  </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 export default function PreviewJourney() {
-    const [journey, setJourney] = useState({}); // Change variable name to 'journey'
+    const [journey, setJourney] = useState({});
     const { id } = useParams();
 
     useEffect(() => {
@@ -11,6 +11,7 @@ export default function PreviewJourney() {
             axios
                 .get(`http://localhost:8000/journey/get/${id}`)
                 .then((response) => {
+                    console.log("Journey Data:", response.data);
                     setJourney(response.data);
                 })
                 .catch((err) => {
@@ -25,33 +26,69 @@ export default function PreviewJourney() {
             <div className="flex justify-between items-center">
                 <h1 className="text-3xl my-8">Your Journey Preview</h1>
             </div>
-            {journey ? (
-                <><div>
-                    <h2 className='text-5xl text-center text-green-600'>{journey.journeyName}</h2> </div>
-                    <div className='cantainer p-4'>
-                        <p className='text-xl mr-3 text-gray-500  container' >Welcome to Traval Infinity. Where Every Journey Becomes an Infinite Adventure.
-                        Explore the World Without Limits, with Travel Infinity.. In here you can experience best and stress free travel experience</p>
+            {journey && journey.journeyName ? (
+                <div>
+                    <h2 className='text-5xl text-center text-green-600'>{journey.journeyName}</h2>
+                    <div className='container p-4'>
+                        <p className='text-xl text-gray-500'>
+                            Welcome to Travel Infinity, where every journey becomes an infinite adventure.
+                            Explore the world without limits with Travel Infinity. Here, you can experience the best and stress-free travel experience.
+                        </p>
+                    </div>
+                    <div className='container p-4'>
+                        <p className='text-xl text-black'>
+                            Your journey, spanning {journey.NoOfDates} days, will start on {journey.StartingDate}.
+                            You have {journey.NoOfMembers} fellow travelers joining you on this adventure.
+                            {journey.Resorts && (
+                                <span>
+                                    During your journey, you'll be staying at {journey.Resorts}, and your reservations are handled by us.
+                                </span>
+                            )}
+                        </p>
+                    </div>
+                    {journey.Locations && (
+                        <div className='container p-6'>
+                            <p className='text-xl text-black'>
+                                The selected locations for your journey are:  
+                                {journey.Locations.map((location, index) => (
+                                    <span key={index}>
+                                        {index > 0 ? ', ' : ''}
+                                        {location}
+                                    </span>
+                                ))}
+                            </p>
                         </div>
-                        
-                        
-                        <div className='cantainer p-4'>
-                        <span className='text-xl mr-3 text-black  container' >Your Journey start on </span>
-                        <span>{journey.StartingDate}</span>
+                    )}
+                    {journey.Events && (
+                        <div className='container p-6'>
+                            <p className='text-xl text-black'>
+                                The selected events for your journey are:  
+                                {journey.Events.map((event, index) => (
+                                    <span key={index}>
+                                        {index > 0 ? ', ' : ''}
+                                        {event}
+                                    </span>
+                                ))}
+                            </p>
                         </div>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        </>
-
+                    )}
+                    {journey.Packages && (
+                        <div className='container p-6'>
+                            <p className='text-xl text-black'>
+                                The selected packages for your journey are:  
+                                {journey.Packages.map((packages, index) => (
+                                    <span key={index}>
+                                        {index > 0 ? ', ' : ''}
+                                        {packages}
+                                    </span>
+                                ))}
+                            </p>
+                        </div>
+                    )}
+                </div>
             ) : (
                 <p>Loading...</p>
             )}
         </div>
-    )
+    );
 }
