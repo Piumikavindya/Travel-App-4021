@@ -13,6 +13,7 @@ import Events from './components/pages/Events';
 import Register from './components/pages/Register';
 import Resorts from './components/pages/Resorts';
 import UpdateJourney from './components/pages/UpdateJourney';
+import PreviewJourney from './components/pages/PreviewJourney';
 export default function App() {
   return (
   <>  
@@ -29,7 +30,10 @@ export default function App() {
     <Route path='/pages/Events' element={<Events/>}/>
     <Route path='/pages/Register' element={<Register/>}/>
     <Route path='/pages/Resorts' element={<Resorts/>}/>
-    <Route path='/update/:id' element={<UpdateJourney/>}/>
+    <Route path='/update/:id' element={<UpdateJourney/>}
+    />
+    <Route path='/preview/:id' element={<PreviewJourney/>}
+    />
     
  </Routes>
  </div>

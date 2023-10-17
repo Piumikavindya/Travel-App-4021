@@ -13,7 +13,7 @@ export default function AllJourneys() {
   useEffect(() => {
     function getJourneys() {
       axios
-        .get('http://localhost:8000/journey/')
+      .get('http://localhost:8000/journey/')
         .then((response) => {
           setJourneys(response.data);
         })
@@ -50,13 +50,13 @@ export default function AllJourneys() {
 
                 <td className='border border-slate-600 rounded-md text-center'>
                     <div className='flex justify-center gap-x-4'>
-                        <Link to={"/journey/details/${journey._id"}><MdPreview className="text-2xl text-green-600"/>
+                        <Link to={`/preview/${journey._id}`}><MdPreview className="text-2xl text-green-600"/>
 
                         </Link>
-                        <Link to={"/journey/update/${journey._id"}><AiOutlineEdit className="text-2xl text-blue-800"/>
+                        <Link to={"/journey/update/${journey._id}"}><AiOutlineEdit className="text-2xl text-blue-800"/>
 
                         </Link>
-                        <Link to={"/journey/delete/${journey._id"}><MdDeleteOutline className="text-2xl text-red-800"/>
+                        <Link to={"/journey/delete/${journey._id}"}><MdDeleteOutline className="text-2xl text-red-800"/>
 
                         </Link>
                     </div>

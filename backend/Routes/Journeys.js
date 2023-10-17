@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let Journey = require("../Models/Journey");
+const { format } = require("date-fns"); 
 
 // add journey route
 router.route("/add").post((req,res)=>{
@@ -7,7 +8,7 @@ router.route("/add").post((req,res)=>{
     const journeyName =req.body.journeyName;
     const NoOfDates = isNaN(req.body.NoOfDates) ? 0 : Number(req.body.NoOfDates);
     const NoOfMembers = isNaN(req.body.NoOfMembers) ? 0 : Number(req.body.NoOfMembers);
-    const  StartingDate = new Date(req.body. StartingDate);
+    const StartingDate = format(new Date(req.body.StartingDate), "yyyy-MM-dd");
     const  ContactNO = Number(req.body. ContactNO);
     const Locations = req.body.Locations; 
     const  Events = req.body. Events;
@@ -85,14 +86,23 @@ router.route("/").get((req,res)=>{
     })
  })
 
-router.route("/get/:id").get(async(req,res ) => {
-    let journeyId = req.params.id;
- const journey=   await Journey.findById(journeyId).then(()=>{
-        res.status(200).send({status: "Journey frtch"}).catch(()=>{
-            console.log(err.massage);
-            res.status(500).send({status:"Error with get journey", error: err.massage});
-        })
-    })
-})
+ router.route("/get/:id").get(async (req, res) => {
+    const journeyId = req.params.id;
+
+    try {
+        const journey = await Journey.findById(journeyId);
+        if (!journey) {
+            // If the journey is not found, send a 404 response
+            return res.status(404).json({ status: "Journey not found" });
+        }
+        journey.StartingDate = format(new Date(journey.StartingDate), "yyyy-MM-dd");
+
+        res.status(200).json(journey); // Send the journey data in the response
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ status: "Error with getting journey", error: err.message });
+    }
+});
+
 
 module.exports = router;
