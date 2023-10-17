@@ -51,12 +51,12 @@ router.route("/").get((req,res)=>{
 })
 
 // update journey route
- router.route("/update/:id").put(async(req,res)=>{
+router.route("/update/:id").put(async (req, res) => {
     let journeyId = req.params.id;
     // destructure method
-    const {journeyName, NoOfDates,NoOfMembers,StartingDate,Locations,ContactNO,Events,Resorts,Packages} = req.body;
+    const { journeyName, NoOfDates, NoOfMembers, StartingDate, Locations, ContactNO, Events, Resorts, Packages } = req.body;
 
-    const updateJourney ={
+    const updateJourney = {
         journeyName,
         NoOfDates,
         NoOfMembers,
@@ -66,15 +66,16 @@ router.route("/").get((req,res)=>{
         Events,
         Resorts,
         Packages
+    };
+
+    try {
+        const updatedJourney = await Journey.findByIdAndUpdate(journeyId, updateJourney, { new: true });
+        res.status(200).json({ status: "Journey updated", journey: updatedJourney });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ status: "Error with updating journey", error: err.message });
     }
-    const update = await Journey.findByIdAndUpdate(journeyId).then(()=> {
-        res.status(200).send({status: "Journey updated"}).catch((err)=>{
-            res.status(500).send({status: "Error with updating journey"})
-        })
-    })
-
- })
-
+});
  // delete journey route
 
  router.route("/delete/:id").delete(async(req,res) =>{
