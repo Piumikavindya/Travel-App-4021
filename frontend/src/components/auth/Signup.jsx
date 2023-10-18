@@ -1,69 +1,64 @@
-import React,{useState} from 'react'
-import Container from '../Container'
-import Title from '../form/Title'
-import FormInput from '../form/FormInput'
-import Submit from '../form/Submit'
-import CustomLink from '../CustomLink'
-import { commonModalClasses } from '../../utils/theme'
+import React, { useState } from 'react';
+import Container from '../Container';
+import Title from '../form/Title';
+import FormInput from '../form/FormInput';
 
-const validateUserInfo=({name, email, password})=>{
-const isValidName = /^[a-z A-Z]+$/;
-
-if(!name.trim()) return {ok:false, error: 'Name is missing!'}
-
-if(!isValidName.test(name)) return {ok:false, error: 'Invalid name!'}
-
-
-if(!password.trim()) return {ok:false, error: 'password is missing!'}
-if(password.length <8) return {ok:false, error: 'password must be 8 characters long!'}
-
-return {ok: true};
-}
+import CustomLink from '../CustomLink';
+import { commonModalClasses } from '../../utils/theme';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
-
-  const [userInfo, setUserInfo]= useState({
-    name: '',
-    email: '',
-    password:'',
+  const [userInfo, setUserInfo] = useState({
+    Name: '',   // Change to 'Name'
+    Email: '',  // Change to 'Email'
+    Password: '', // Change to 'Password'
   });
-const handleChange = ({target}) =>{
-  const {value, name}=target;
-  setUserInfo({...userInfo,[name]:value})
- 
-};
-const handleSubmit = (e) =>{
-  e.preventDefault();
- const{ok,error}= validateUserInfo(userInfo);
- 
-if (!ok) return console.log(error);
 
-console.log(userInfo);
-};
+  const navigate = useNavigate();
 
-  const{name,email,password}= userInfo
-    return (
-    <div className="fixed inset-0 dark:bg-primary bg-green-200 -z-10 flex justify-center items-center p-1"> 
-     
-     
+  const handleChange = ({ target }) => {
+    const { value, name } = target;
+    setUserInfo({ ...userInfo, [name]: value });
+  };
+
+  const sendData = (e) => {
+    e.preventDefault();
+
+    // Send user data to the server
+    axios
+      .post('http://localhost:8000/user/add', userInfo)
+      .then(() => {
+        alert("User Added");
+        console.log('User registered successfully');
+        navigate('/auth/signin');
+      })
+      .catch((err) => {
+        console.log('Registration failed:', err);
+      });
+  };
+
+  const { name, email, password } = userInfo;
+
+  return (
+    <div className="fixed inset-0 dark:bg-primary bg-green-200 -z-10 flex justify-center items-center p-1">
       <Container>
-        <form onSubmit={handleSubmit} className={commonModalClasses+'w-72'}> 
-         <Title Children='Sign up'> Sign up</Title>
-         <FormInput value={name} onChange={handleChange} label='Name' placeholder='piumi kavindya' name='name'/>
-         <FormInput value={email} onChange= {handleChange} label='Eamil' placeholder='abcd@gmail.com' name='email'/>
-         <FormInput value={password} onChange={handleChange}  label='Password' placeholder='***********' name='password'
-         type='password'/>
-         
-         <Submit  value="Sign up"/>
+        <form onSubmit={sendData} className={commonModalClasses + 'w-72'}>
+          <Title Children='Sign up'> Sign up</Title>
+          <FormInput value={name} onChange={handleChange} label='Name' placeholder='Piumi Kavindya' name='Name' />
+<FormInput value={email} onChange={handleChange} label='Email' placeholder='abcd@gmail.com' name='Email' />
+<FormInput value={password} onChange={handleChange} label='Password' placeholder='***********' name='Password' type='password' />
 
-         <div className='flex justify-between'>
-          <CustomLink  to ='/auth/forget-password'> Forget Password</CustomLink>
+          <button type="submit" className="btn btn-primary bg-black p-2">
+            Sign up
+          </button>
 
-          <CustomLink  to ='/auth/signin'> Sign in</CustomLink>
-
-         </div>
+          <div className='flex justify-between'>
+            <CustomLink to='/auth/forget-password'>Forget Password</CustomLink>
+            <CustomLink to='/auth/signin'>Sign in</CustomLink>
+          </div>
         </form>
       </Container>
     </div>
-  )
+  );
 }

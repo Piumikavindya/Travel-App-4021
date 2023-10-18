@@ -25,8 +25,10 @@ connection.once("open", ()=>{
 } )
 
 const journeyRouter = require("./Routes/Journeys.js");
+const userRouter =  require("./Routes/Users.js");
 
 app.use("/journey", journeyRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, ()=>{
     console.log(`The server is listening on port: ${PORT}`)

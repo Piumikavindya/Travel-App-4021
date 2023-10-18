@@ -10,20 +10,37 @@ import {MdDeleteOutline } from 'react-icons/md';
 export default function AllJourneys() {
   const [journeys, setJourneys] = useState([]);
 
-  useEffect(() => {
-    function getJourneys() {
-      axios
+  function getJourneys() {
+    axios
       .get('http://localhost:8000/journey/')
-        .then((response) => {
-          setJourneys(response.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    getJourneys();
-  }, []);
+      .then((response) => {
+        setJourneys(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
+  useEffect(() => {
+    // Fetch the initial list of journeys
+    getJourneys();
+  }, []); // Empty dependency array to run this effect only once during component mount
+
+  
+
+// Function to handle journey deletion and re-fetch the data
+const handleDeleteJourney = (id) => {
+  axios
+    .delete(`http://localhost:8000/journey/delete/${id}`)
+    .then(() => {
+      // After successful deletion, refresh the journey list
+      getJourneys();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+  
   return (
     <div>
       <div className="flex justify-between items-center">

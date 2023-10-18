@@ -14,6 +14,9 @@ import Register from './components/pages/Register';
 import Resorts from './components/pages/Resorts';
 import UpdateJourney from './components/pages/UpdateJourney';
 import PreviewJourney from './components/pages/PreviewJourney';
+import DeleteJourney from './components/pages/DeleteJourney';
+
+
 export default function App() {
   return (
   <>  
@@ -32,7 +35,7 @@ export default function App() {
     <Route path='/pages/Resorts' element={<Resorts/>}/>
     <Route path='/update/:id' element={<UpdateJourney/>}/>
     <Route path='/preview/:id' element={<PreviewJourney/>}/>
-    
+    <Route path='/delete/:id' element={<DeleteJourney/>}/>
  </Routes>
  </div>
     </> //render the navbar
