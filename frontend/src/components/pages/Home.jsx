@@ -4,7 +4,7 @@ import "../../styles/Home.css";
 import Hbar from '../User/Hbar';
 import Button from '../User/Button';
 //import AllJourneys from '../form/AllJourneys';
-import nature from '../../assets/images/nature (2).mp4';
+import nature from '../../nature.mp4';
 
 export default function Home() {
   return (

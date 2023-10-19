@@ -43,13 +43,13 @@ export default function PreviewJourney() {
 
                   
                     <div className='container p-4'>
-                        <p className='text-xl text-gray-500'>
+                        <p className='text-xl textff text-gray-500'>
                             Welcome to Travel Infinity, where every journey becomes an infinite adventure.
                             Explore the world without limits with Travel Infinity. Here, you can experience the best and stress-free travel experience.
                         </p>
                     </div>
                     <div className='container p-4'>
-                        <p className='text-xl text-black'>
+                        <p className='text-xl textff text-black'>
                             Your journey, spanning {journey.NoOfDates} days, will start on {journey.StartingDate}.
                             You have {journey.NoOfMembers} fellow travelers joining you on this adventure.
                             {journey.Resorts && (

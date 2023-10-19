@@ -10,8 +10,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function Signin() {
   const [credentials, setCredentials] = useState({
-    email: '',
-    password: '',
+    Email: '',
+    Password: '',
   });
 
   const [error, setError] = useState('');
@@ -31,8 +31,8 @@ export default function Signin() {
 
     const { Email, Password } = credentials;
 
-    axios
-      .post('http://localhost:8000/user/signin', { username: Email, Password })
+    // Send a POST request to your server for custom authentication
+    axios.post('http://localhost:8000/user/signin', { Email: Email, Password: Password })
       .then((response) => {
         if (response.data.success) {
           alert('Signin successful');
@@ -59,22 +59,21 @@ export default function Signin() {
           <FormInput
             label="Email"
             placeholder="abcd@gmail.com"
-            name="email"
-            value={credentials.email}
+            name="Email"
+            value={credentials.Email}
             onChange={handleChange}
           />
           <FormInput
             label="Password"
             placeholder="***********"
-            name="password"
+            name="Password"
             type="password"
-            value={credentials.password}
+            value={credentials.Password}
             onChange={handleChange}
           />
-
-<Link to="/">
-  <Submit value="Sign in" />
-</Link>
+          <button type="submit" className="btn btn-primary bg-black p-2">
+            Sign in
+          </button>
 
           {error && <p className="text-red-500">{error}</p>}
 

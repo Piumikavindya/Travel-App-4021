@@ -29,20 +29,25 @@ connection.once('open', () => {
 });
 
 
-app.use(
-  session({
-    secret: 'your-secret-key',
-    resave: false,
-    saveUninitialized: false,
-  })
-);
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.post('/user/signin', (req, res) => {
+  const { Email, Password } = req.body;
 
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+  // Perform custom authentication logic to check if Email and Password match user data in your database
+  User.findOne({ Email: Email, Password: Password })
+    .then(user => {
+      if (!user) {
+        return res.status(401).json({ success: false, message: 'Invalid email or password' });
+      }
+
+      // Authentication succeeded
+      return res.status(200).json({ success: true, message: 'Signin successful' });
+    })
+    .catch(err => {
+      return res.status(500).json({ success: false, message: 'Internal server error' });
+    });
+});
+
 
 const journeyRouter = require('./Routes/Journeys.js');
 const userRouter = require('./Routes/Users.js');

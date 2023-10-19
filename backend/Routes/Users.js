@@ -23,11 +23,12 @@ router.route('/add').post((req, res) => {
 
 
 
-router.route('/signin').post((req, res, next) => {
+router.post('/signin', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       return res.status(500).json({ success: false, message: 'Internal server error' });
     }
+
     if (!user) {
       return res.status(401).json({ success: false, message: 'Invalid email or password' });
     }
@@ -36,6 +37,7 @@ router.route('/signin').post((req, res, next) => {
       if (err) {
         return res.status(500).json({ success: false, message: 'Login error' });
       }
+      
       return res.status(200).json({ success: true, message: 'Signin successful' });
     });
   })(req, res, next);
