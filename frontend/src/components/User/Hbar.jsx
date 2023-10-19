@@ -5,13 +5,13 @@ import "../../styles/Common.css";
 export default function Hbar() {
   return (
     <div>
-         <div className='background-image '>
-            home
+         <div>
+            
            
-            </div>
+            </div >  
             <div className='overlay-image p-1 h-30'>            
 
-            <img src="/logo2.png"  alt="" className="h-20 mx-auto "></img>
+            
                 <h1 className=' Hbar-text text-center'>
                     Create Your<br/>
                        Own <br/>

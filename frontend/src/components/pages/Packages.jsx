@@ -6,7 +6,7 @@ export default function Packages() {
   return (
     <div>
 
-      <Pagebar></Pagebar>   
+   
     </div>
   )
 }

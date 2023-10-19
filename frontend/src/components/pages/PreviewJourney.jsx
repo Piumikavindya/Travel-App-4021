@@ -23,12 +23,25 @@ export default function PreviewJourney() {
 
     return (
         <div className='p-4'>
-            <div className="flex justify-between items-center">
-                <h1 className="text-3xl my-8">Your Journey Preview</h1>
-            </div>
+           
             {journey && journey.journeyName ? (
                 <div>
-                    <h2 className='text-5xl text-center text-green-600'>{journey.journeyName}</h2>
+        <div  className='header'>
+
+        <div className='headerTitle'>
+        <h2 className='text-5xl text-center headerTitleLg text-white'>{journey.journeyName}</h2>
+        <p className='headerTitleSm'>$500 per person</p>
+        </div>
+        <img src="/camera.jpg" className='headerImg' alt="C" />
+
+
+</div>
+
+
+
+
+
+                  
                     <div className='container p-4'>
                         <p className='text-xl text-gray-500'>
                             Welcome to Travel Infinity, where every journey becomes an infinite adventure.

@@ -15,7 +15,7 @@ import Resorts from './components/pages/Resorts';
 import UpdateJourney from './components/pages/UpdateJourney';
 import PreviewJourney from './components/pages/PreviewJourney';
 import DeleteJourney from './components/pages/DeleteJourney';
-
+import AllJourneys from './components/form/AllJourneys';
 
 export default function App() {
   return (
@@ -30,6 +30,7 @@ export default function App() {
     <Route path='/pages/Packages' element={<Packages/>}/>
     <Route path='/pages/Locations' element={<Locations/>}/>
     <Route path='/pages/CreateJourney' element={<CreateJourney/>}/>
+    <Route path='/form/AllJourneys' element={<AllJourneys/>}/>
     <Route path='/pages/Events' element={<Events/>}/>
     <Route path='/pages/Register' element={<Register/>}/>
     <Route path='/pages/Resorts' element={<Resorts/>}/>
