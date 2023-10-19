@@ -1,8 +1,7 @@
-
-import React from 'react'
+import React, { useState } from 'react';
 import Navbar from "./components/User/Navbar";
 import Signup from './components/auth/Signup';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Signin from './components/auth/Signin';
 import ForgetPassword from './components/auth/ForgetPassword';
@@ -18,13 +17,33 @@ import DeleteJourney from './components/pages/DeleteJourney';
 import AllJourneys from './components/form/AllJourneys';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleSignIn = () => {
+    // Logic to handle user authentication and set isAuthenticated to true.
+    setIsAuthenticated(true);
+  };
+
+  const handleSignOut = () => {
+    // Logic to sign the user out and set isAuthenticated to false.
+    setIsAuthenticated(false);
+  };
   return (
   <>  
   <div>
-  <Navbar/>  
+  <Navbar isAuthenticated={isAuthenticated} handleSignOut={handleSignOut} /> 
  <Routes>
     <Route path='/' element={<Home/>}/>
-    <Route path='/auth/signin' element={<Signin/>}/>
+    <Route
+  path="/auth/signin"
+  element={
+    isAuthenticated ? (
+      <Navigate to="/" />
+    ) : (
+      <Signin setIsAuthenticated={setIsAuthenticated} /> 
+    )
+  }
+/>
     <Route path='/auth/signup' element={<Signup/>}/>
     <Route path='/auth/forget-password' element={<ForgetPassword/>}/>
     <Route path='/pages/Packages' element={<Packages/>}/>

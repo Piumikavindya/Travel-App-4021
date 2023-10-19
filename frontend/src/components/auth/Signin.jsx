@@ -8,7 +8,7 @@ import { commonModalClasses } from '../../utils/theme';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function Signin() {
+export default function Signin({setIsAuthenticated}) {
   const [credentials, setCredentials] = useState({
     Email: '',
     Password: '',
@@ -28,28 +28,31 @@ export default function Signin() {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-
+  
     const { Email, Password } = credentials;
-
+  
     // Send a POST request to your server for custom authentication
-    axios.post('http://localhost:8000/user/signin', { Email: Email, Password: Password })
+    axios.post('http://localhost:8000/user/signin', { Email, Password })
       .then((response) => {
         if (response.data.success) {
           alert('Signin successful');
           console.log('User signed in successfully');
+          setIsAuthenticated(true);
           navigate('/');
         } else {
           setError('Invalid email or password');
         }
       })
       .catch((err) => {
-        if (err.response.status === 401) {
-          setError('Invalid email or password'); // Handle 401 error by setting an error message
+        if (err.response && err.response.status === 401) {
+          setError('Invalid email or password');
         } else {
           console.log('Signin failed:', err);
         }
       });
-  }
+  };
+  
+  
 
   return (
     <div className="fixed inset-0 dark:bg-primary bg-green-200 transparent-background -z-10 flex justify-center items-center p-1">

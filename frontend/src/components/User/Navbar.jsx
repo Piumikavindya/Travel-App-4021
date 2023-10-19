@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks";
 import "../../styles/Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({handleSignOut}) {
 const {toggleTheme}= useTheme();
-
+const isAuthenticated = false;
   return ( 
     <div className="bg-white  shadow-sm shadow-gray-500">
       <Container className=" text-black p-2"  >
@@ -34,10 +34,23 @@ Home
 </li>
 
 <li>
- <Link className="text-red-400 Navtext font-semibold text-lg" to='auth/signin'>
- Login
- </Link>
+  {isAuthenticated ? (
+    <button
+      onClick={handleSignOut}
+      className="text-red-400 Navtext font-semibold text-lg"
+    >
+      Sign Out
+    </button>
+  ) : (
+    <Link
+      className="text-red-400 Navtext font-semibold text-lg"
+      to="/auth/signin"
+    >
+      Sign In
+    </Link>
+  )}
 </li>
+
 
 
        </ul>
