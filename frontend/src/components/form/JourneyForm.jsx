@@ -50,17 +50,17 @@ export default function JourneyForm() {
     }
     const options = [
         { value: 'Galle Fort', label: 'Galle Fort' },
-        { value: 'Pasikuda', label: 'Pasikuda' },
+        { value: 'Jungle Beach', label: 'Jungle Beach' },
         { value: 'Hikkaduwa', label: 'Hikkaduwa' },
-        { value: 'AnotherLocation', label: 'Another Location' },
-        { value: 'YetAnotherLocation', label: 'Yet Another Location' },
+        { value: 'sea turtle hatchery', label: 'sea turtle hatchery' },
+        { value: 'Light House', label: 'Light House' },
       ];
 
       const options1 = [
         { value: 'Galle Night', label: 'Galle Night' },
         { value: 'Cultural fes', label: 'Cultural fes' },
-        { value: 'Hikkaduwa', label: 'Hikkaduwa' },
-        { value: 'AnotherEvent', label: 'Another Event' },
+        { value: 'Galle Fes', label: 'Galle Fes' },
+        { value: 'Art Gallory', label: 'Art Gallory' },
         { value: 'Musical', label: 'Musical' },
       ];
 

@@ -1,3 +1,92 @@
 .textff{
- font-family: 'Merriweather', serif;
+    font-family: 'Lora', serif;
+ font-size: 30px;
+ font-style: italic;
+ color: blueviolet;
+ border-bottom: 2px solid #a7a7a7;
+ padding-bottom: 10px;
 }
+
+.textTitle{
+font-size: 30px;
+font-family: 'Lora', serif;
+font-style: italic;
+}
+
+.background-image {
+    position: static;
+  width: 100%;
+  height: 70vh; 
+    /* Adjust the height as needed */
+    /* background-image: url('../assets/images/camera.jpg'); Set the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+     
+    background-color: rgba(24, 6, 6, 0.5); 
+    z-index: 1; /* Bring the background image to the front */
+  }
+  
+
+  .text{
+    font-size: 50px;
+    margin: 0px 100px 0px 200px;
+    font-weight: bolder;
+    position: relative;
+    color: aliceblue;
+
+  }
+
+
+  .header{
+    margin-top: 0%;
+  }
+
+  .headerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    color: white;
+  }
+
+
+.headerTitleSm{
+    position: absolute;
+    top: 38%;
+    font-size: 20px;
+}
+
+.headerTitleLg{
+  position: absolute;
+  top: 16%;
+  font-size: 100px;
+}
+
+.headerImg{
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  object-fit: cover;
+}
+
+.JCard{
+ display: flex;
+ flex-wrap: wrap;
+ margin: 70px;
+ padding-right: 100px;
+ padding-left: 70px;
+ gap: 50px;
+}
+
+.image-list {
+    width: 800px;
+    height: 550px;
+  }
+  
+  .image-list-item {
+    /* Customize individual item styles here */
+    width: 100px;
+    height: 200px;
+    margin: 10px; /* Adjust as needed */
+  }

@@ -17,7 +17,7 @@ router.route("/add").post((req,res)=>{
 
     if (isNaN(NoOfDates) || isNaN(NoOfMembers)) {
         res.status(400).json("Invalid number values for NoOfDates or NoOfMembers");
-        return; // Exit early to avoid saving invalid data
+        return; 
     }
 
     const newJourney = new Journey({
@@ -38,7 +38,7 @@ router.route("/add").post((req,res)=>{
     })
 })
 
-// read journey route
+
 
 router.route("/").get((req,res)=>{
 
@@ -50,10 +50,9 @@ router.route("/").get((req,res)=>{
     })
 })
 
-// update journey route
 router.route("/update/:id").put(async (req, res) => {
     let journeyId = req.params.id;
-    // destructure method
+
     const { journeyName, NoOfDates, NoOfMembers, StartingDate, Locations, ContactNO, Events, Resorts, Packages } = req.body;
 
     const updateJourney = {
@@ -76,7 +75,7 @@ router.route("/update/:id").put(async (req, res) => {
         res.status(500).json({ status: "Error with updating journey", error: err.message });
     }
 });
- // delete journey route
+ 
 
  router.route("/delete/:id").delete(async(req,res) =>{
     let journeyId = req.params.id;
@@ -94,12 +93,12 @@ router.route("/update/:id").put(async (req, res) => {
     try {
         const journey = await Journey.findById(journeyId);
         if (!journey) {
-            // If the journey is not found, send a 404 response
+            
             return res.status(404).json({ status: "Journey not found" });
         }
-        // Journey.StartingDate = format(new Date(Journey.StartingDate), "yyyy-MM-dd");
+        
 
-        res.status(200).json(journey); // Send the journey data in the response
+        res.status(200).json(journey); 
     } catch (err) {
         console.error(err.message);
         res.status(500).json({ status: "Error with getting journey", error: err.message });

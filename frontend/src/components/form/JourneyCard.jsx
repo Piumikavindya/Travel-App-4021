@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
 
 
 const JourneyCard = ({ imageSrc, title, description, buttonLabel }) => {
@@ -10,7 +10,7 @@ const JourneyCard = ({ imageSrc, title, description, buttonLabel }) => {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Button variant="primary">{buttonLabel}</Button>
+      
       </Card.Body>
     </Card>
   );

@@ -4,7 +4,21 @@
   
     
   }
-
+  .background-image {
+    position: static;
+  width: 100%;
+  height: 80vh; 
+   
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    filter: blur(3px); 
+    background-color: rgba(24, 6, 6, 0.5); 
+    z-index: 1; /* Bring the background image to the front */
+  }
+  
   .overlay-image {
     position: absolute;
     top: 5%; /* Adjust the top position as needed */
@@ -19,22 +33,22 @@
     background-position: center;
     background-color: rgba(92, 91, 91, 0.5); 
    
-     /* Set the transparency level for the overlay image */
-    z-index: 2; /* Bring the overlay image above the background image */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a border with shade */
+   
+    z-index: 2; 
+    border: 2px solid rgba(255, 255, 255, 0.2); 
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3); 
   filter: blur(0.3px); 
   }
 
   .overlay-image1 {
     position: absolute;
-    top: 5%; /* Adjust the top position as needed */
+    top: 15%; 
     left: 20%;
     bottom: 5%;
-    /* Adjust the left position as needed */
-    width: 60%; /* Use relative unit for width (40% of the container width) */
+  
+    width: 60%; 
     height: 63%; 
-   /* Set the path to your overlay image */
+ 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -72,7 +86,7 @@ margin: auto;
   height: 100%;
   width: 50%;
   background: rgb(240, 250, 253);
-  top: 0;
+  top: 10px;
   bottom: 0;
   z-index: 1;
   mix-blend-mode: hard-light;
@@ -122,7 +136,12 @@ margin: auto;
 }
   }
 
-  /*  Navbar*/
+  .Ctext{
+    color: blue;
+    padding-left: 20%;
+
+  }
+
 
  
   

@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks";
 import "../../styles/Navbar.css";
 
-export default function Navbar({handleSignOut}) {
+export default function Navbar({isAuthenticated,handleSignOut}) {
 const {toggleTheme}= useTheme();
-const isAuthenticated = false;
+
   return ( 
     <div className="bg-white  shadow-sm shadow-gray-500">
       <Container className=" text-black p-2"  >
         <div className=" flex navbar-logo justify-between items-center">
           <Link to='/'>
-           <img src="/logo2.png"  alt="" className="h-10 "/>
+           <img src="/logo.png"  alt="" className="h-12 w-20 "/>
           </Link>
        
        <ul className="flex items-center space-x-6">
